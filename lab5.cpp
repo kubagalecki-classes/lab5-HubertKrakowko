@@ -10,7 +10,7 @@ std::vector< char > foo(std::list< Human >& people)
     // Twoja implementacja tutaj
     //list<Human> lista;
     //ref=&people;
-    vector<char> T;
+     vector<char> T;
 
     for (Human e : people) {
         e.birthday();
@@ -18,22 +18,23 @@ std::vector< char > foo(std::list< Human >& people)
     
     bool monster;
 
-    for(auto rit=people.rbegin();rit!=(auto ritend=rend());*it++)
+    list<Human>::reverse_iterator rit=people.rbegin();
+
+    for(auto rit=people.rbegin();rit!=people.rend();*rit++)
     {
       monster=rit->isMonster();
 
       if(monster==true)
       {
-          T.push_back("n");
+          T.push_back('n');
       }
       else{
-        T.push_back("y");
+        T.push_back('y');
       }
       
     }
 
-    return {T};
-}
+
 
 
 int main()

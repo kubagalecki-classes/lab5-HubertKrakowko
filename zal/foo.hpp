@@ -20,7 +20,9 @@ std::vector< char > foo(std::list< Human >& people)
     
     bool monster;
 
-    for(auto rit=people.rbegin();rit!=people.rend();*rit++)
+    std::list<Human>::reverse_iterator rit;
+
+    for(rit=people.rbegin();rit!=people.rend();*rit++)
     {
       monster=rit->isMonster();
 
